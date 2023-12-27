@@ -1,12 +1,21 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
 import { ModeToggle } from '@/components/ModeToggle';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
+const client = new ApolloClient({
+  uri: import.meta.env.VITE_GRAPHQL_API,
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <ModeToggle />
-      <div>hello</div>
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <ModeToggle />
+        <div>hello</div>
+      </ThemeProvider>
+    </ApolloProvider>
   );
 }
 
