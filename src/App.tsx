@@ -1,7 +1,7 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
-import { ModeToggle } from '@/components/ModeToggle';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import ModeToggle from '@/components/ModeToggle';
+import ThemeProvider from '@/context/ThemeProvider';
 
 const client = new ApolloClient({
   uri: import.meta.env.VITE_GRAPHQL_API,

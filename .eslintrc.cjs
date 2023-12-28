@@ -54,7 +54,8 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier', 'tailwindcss'],
   rules: {
     'react/react-in-jsx-scope': 0,
+    'react/require-default-props': 0,
     'import/extensions': 0,
   },
-  ignorePatterns: ['./src/components/ui/**.*'],
+  ignorePatterns: ['src/components/ui/*.tsx', 'src/lib/utils.ts'],
 };
