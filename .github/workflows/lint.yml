@@ -32,7 +32,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Install your linters here
-
+      # Build
+      - name: Build Project
+        run: npm run build
+        
+      # Lint 
       - name: Run linters
         run: npm run lint
+      
